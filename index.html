@@ -4,32 +4,29 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Redirección Inteligente</title>
+  <link rel="stylesheet" href="styles.css">
   <script>
-    // URLs de tus aplicaciones en App Store y Play Store
-    const appStoreURL = "https://apps.apple.com/us/app/java-300-inversionista-jtc/id6657974667"; // Reemplaza con tu App Store URL
-    const playStoreURL = "https://play.google.com/store/apps/details?id=com.jtc.fundraiserapp&hl=en&pli=1"; // Reemplaza con tu Play Store URL
+    const appStoreURL = "https://apps.apple.com/us/app/java-300-inversionista-jtc/id6657974667";
+    const playStoreURL = "https://play.google.com/store/apps/details?id=com.jtc.fundraiserapp&hl=en&pli=1";
 
-    // Detectar el dispositivo
     function redirectToStore() {
       const userAgent = navigator.userAgent || navigator.vendor || window.opera;
 
-      // Si es iOS
       if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
         window.location.href = appStoreURL;
-      } 
-      // Si es Android
-      else if (/android/i.test(userAgent)) {
+      } else if (/android/i.test(userAgent)) {
         window.location.href = playStoreURL;
-      } 
-      // Si no es ninguno, redirige a tu sitio web o una página de fallback
-      else {
-        window.location.href = "https://investin.javatimescaffe.com/sp/registration"; // Reemplaza con tu sitio web
+      } else {
+        window.location.href = "https://investin.javatimescaffe.com/sp/registration";
       }
     }
   </script>
 </head>
 <body onload="redirectToStore()">
-  <h1>Redirigiendo...</h1>
-  <p>Si no eres redirigido automáticamente, <a href="https://investin.javatimescaffe.com/sp/registration">haz clic aquí</a>.</p>
+  <div class="container">
+    <h1>Redirigiendo...</h1>
+    <p>Si no eres redirigido automáticamente, <a href="https://investin.javatimescaffe.com/sp/registration">haz clic aquí</a>.</p>
+  </div>
 </body>
 </html>
+
